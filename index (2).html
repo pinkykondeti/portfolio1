@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinky Kondeti Portfolio</title>
+  <style>
+    /* General body styling */
+    body {
+      background-color: #0a192f;
+      color: #ccd6f6;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Top Navigation Bar */
+     nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #112240;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .brand {
+      font-size: 24px;
+      color: #64ffda;
+      font-weight: bold;
+    }        
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ccd6f6;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #64ffda;
+    }
+    
+    
+     /* Section Styling */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h1, section h2 {
+      color: #64ffda;
+    }
+
+    section p {
+      line-height: 1.6;
+    }
+
+    .button-container a {
+      display: inline-block;
+      color: #0a192f;
+      background-color: #64ffda;
+      padding: 10px 20px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .button-container a:hover {
+      background-color: #52e3c1;
+    }
+
+
+   /* Hero Section */
+    .content-section {
+      padding: 40px 20px;
+      text-align: left;
+    }
+
+    h1, h2, h3 {
+      color: #00d4ff;
+    }
+
+    h4 {
+      color: #ffffff;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    h1 {
+        color: #00d4ff; /* Vibrant blue for main heading */
+        font-size: 42px;
+        text-align: left;
+        margin: 20px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h4 {
+        color: #ffffff;
+        font-size: 32px;
+        margin: 20px;
+        animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    li {
+        margin: 0 10px;
+    }
+
+    li a {
+        color: #00d4ff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    li a:hover {
+        background: #00d4ff;
+        color: #000000;
+        border-radius: 5px;
+    }
+     
+
+    .skill-container {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .skill-text {
+        color: #00d4ff;
+        font-size: 28px;
+        margin-left: 10px;
+        position: relative;
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+    }
+
+    .profile-image {
+        position: absolute;
+        top: 100px;
+        right: 150px;
+        width: 150px;
+        height: 250px;
+        border-radius: 70%;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        animation: zoomIn 2s ease;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+     section {
+        padding: 40px 10px;
+      }
+
+    .content-section {
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    #Qualification h2, #Skills h2, #Certifications h2, #Internships h2, #Projects h2, #Contact h2 {
+        background-color: #00d4ff;
+        text-align: center;
+        font-size: 28px;
+        color: #000000;
+        border-radius: 15px;
+        margin: 30px auto;
+        width: fit-content;
+        padding: 10px 20px;
+        animation: bounceIn 1.5s;
+    }
+
+    .contact-info, .qualification-item, .skill-item, .certification-item, .internship-item, .project-item {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        animation: fadeInUp 1s ease;
+    }
+
+    .login-button {
+        display: inline-block;
+        color: #000000;
+        background-color: #00d4ff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 20px;
+        transition: background 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    .login-button:hover {
+        background-color: #97f9ed;
+    }
+     /* Section Content */
+    .content-section h2 {
+      background-color: #00d4ff;
+      color: #000;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contact Section */
+    .contact-info {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      section {
+        padding: 40px 10px;
+      }
+    }
+
+     </style>
+  </head>
+<body>
+
+<nav>
+  <div class="brand">Pinky Kondeti</li>
+  <ul>
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#Qualification">Qualification</a></li>
+    <li><a href="#Skills">Skills</a></li>
+    <li><a href="#Certifications">Certifications</a></li>
+    <li><a href="#Internships">Internships</a></li>
+    <li><a href="#Projects">Projects</a></li>
+    <li><a href="#Contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="Home" class="content-section">
+  <h4>Hello I'm</h4>
+  <h1>Pinky Kondeti</h1>
+  <h4>and I'm capable in</h4>
+  <div class="skill-container">
+    <div class="skill-text" id="skills"></div>
+  </div>
+  
+  <b><a href=""C:\Users\pinky\Downloads\resume.html"" class="login-button">VIEW RESUME</a></b>
+<b><a href="https://www.linkedin.com/in/pinky-kondeti-721a36286" class="login-button" >LINKEDIN</a></b>
+<b><a href="https://github.com/pinkykondeti" class="login-button">GITHUB</a></b>
+
+
+<div class="profile-image">
+  <img src="C:\Users\pinky\OneDrive\Pictures\Screenshots\mine.jpg" alt="Profile Image">
+</div>
+
+
+</div>
+
+<div id="Qualification" class="content-section">
+  <h2>Qualification</h2>
+  <div class="qualification-item">
+    <h3>Bachelor of Technology in Computer Science</h3>
+    <p><strong>Institution:</strong> SR University</p>
+    <p><strong>Year:</strong> 2022 - 2026</p>
+    <p><strong>CGPA:</strong> 9.35/10</p>
+  </div>
+  <div class="qualification-item">
+    <h3>Intermediate Education</h3>
+    <p><strong>Institution:</strong> Acumen Junior College</p>
+    <p><strong>Year:</strong> 2020 - 2022</p>
+    <p><strong>Percentage:</strong> 91.2%</p>
+  </div>
+</div>
+<div id="Skills" class="content-section">
+  <h2>Skills</h2>
+  <div class="skill-item">
+    <p>Programming Languages: JavaScript, Python, Java, C</p>
+  </div>
+  <div class="skill-item">
+    <p>Web Technologies: HTML5, CSS3, React, Node.js</p>
+  </div>
+  <div class="skill-item">
+    <p>Databases: MySQL, MongoDB, Bootstrap</p>
+  </div>
+  <div class="skill-item">
+    <p>Tools: Git, Docker</p>
+  </div>
+</div>
+
+<div id="Certifications" class="content-section">
+  <h2>Certifications</h2>
+  <div class="certification-item">
+    <h3>Microsoft Azure Ai</h3>
+    <p><strong>Platform:</strong> Microsoft</p>
+    <p><strong>Year:</strong> 2024</p>
+  </div>
+  <div class="certification-item">
+    <h3>Cisco Networking Academy in Introduction to Networks</h3>
+    <p><strong>Platform:</strong> Cisco</p>
+    <p><strong>Year:</strong> 2023</p>
+  </div>
+</div>
+
+<div id="Internships" class="content-section">
+  <h2>Internships</h2>
+  <div class="internship-item">
+    <h3>Web Development Intern</h3>
+    <p><strong>Company:</strong> Internpe </p>
+    <p><strong>Duration:</strong> June 2021 - August 2021</p>
+    <p><strong>Responsibilities:</strong> Worked on real-world projects involving HTML,CSS,JavaScript.</p>
+  </div>
+  <div class="internship-item">
+    <h3>Java Development</h3>
+    <p><strong>Company:</strong> Oasis Infobyte</p>
+    <p><strong>Duration:</strong> Jan 2021 - May 2021</p>
+    <p><strong>Responsibilities:</strong> hands-on experience in building scalable Java applications.</p>
+  </div>
+</div>
+
+<div id="Projects" class="content-section">
+  <h2>Projects</h2>
+  <div class="project-item">
+    <h3>Online Portfolio Website</h3>
+    <p><strong>Description:</strong> Developed a personal portfolio website to showcase projects and skills.</p>
+    <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+    <p><a href="your_project_link" target="_blank">View Project</a></p>
+  </div>
+  <div class="project-item">
+    <h3>Movie Recommendation System</h3>
+    <p><strong>Description:</strong> Built a recommendation engine using collaborative filtering (Matrix Factorization, SVD) and content-based filtering techniques to suggest movies based on user preferences with 85% accuracy leading to a more personalized user experience.</p>
+    <p><strong>Technologies:</strong> Python</p>
+    <p><a href="your_project_link" target="_blank">View Project</a></p>
+  </div>
+  <div class="project-item">
+    <h3>Library Management System</h3>
+    <p><strong>Description:</strong> Developed a comprehensive SQL-based database system to efficiently manage and track books, authors, borrowers,
+and loan transactions, optimizing library operations and resource management by 70%.</p>
+    <p><strong>Technologies:</strong> SQL</p>
+    <p><a href="your_project_link" target="_blank">View Project</a></p>
+  </div>
+  <div class="project-item">
+    <h3>Hospital Management System</h3>
+    <p><strong>Description:</strong> Built a hospital management system that organized 2,000+ patient records, improved staff scheduling by 30%, and made inventory tracking 40% more accurate, boosting overall efficiency and patient care.</p>
+    <p><strong>Technologies:</strong> C Programming</p>
+    <p><a href="your_project_link" target="_blank">View Project</a></p>
+  </div>
+
+</div>
+
+<div id="Contact" class="content-section">
+  <h2>Contact</h2>
+  <ul class="contact-info">
+    <li><strong>Email:</strong> pinkykondeti007@gmail.com</li><br><br>
+    <li><strong>Phone:</strong> +91 9391773940</li><br><br>
+    
+
+  </ul>
+</div>
+
+<script>
+  const skills = ['JavaScript', 'HTML & CSS', 'React', 'Node.js', 'Python', 'Django'];
+  let skillIndex = 0;
+  const skillElement = document.getElementById('skills');
+
+  function showSkill() {
+    skillElement.style.opacity = 0; // Start fade out
+    setTimeout(() => {
+      skillElement.textContent = skills[skillIndex];
+      skillElement.style.opacity = 1; // Start fade in
+      skillIndex = (skillIndex + 1) % skills.length;
+    }, 1000); // Wait for fade out to complete
+  }
+
+  setInterval(showSkill, 3000); // Change skill every 3 seconds
+  showSkill(); // Initial call
+</script>
+
+</body>
+</html>
